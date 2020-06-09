@@ -13,26 +13,28 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+    
+
+    class App extends React.Component {
+
+componentDidMount() {
+ const listPerson=fetch('/dict.json')
+  .then(res => res.json())
+  .then(json =>{
+      <li>{json.id}</li>
+  })
+}
+
+render() {
+  return (
+   <ul>{this.listPerson}</ul>
+ );
+}
+}
         
-        class PersonList extends React.Component{
-            constructor(props){
-                super(props);
-                
-               
-            }
-        render(){
-           const ListPerson= this.person.map(item=>{
-                        <li>{item}</li>
-                    })
-                return (
-                   <ul>{ListPerson}</ul>
-                );
-            }
-        }
-       const person=[1,2,3,4,5];
-   
+       
       ReactDOM.render(
-        <PersonList person={person}/>,
+        <App/>,
         document.getElementById('root')
       );
       <link rel="stylesheet" type="text/css" href="style.css"/> 
