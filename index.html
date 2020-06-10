@@ -21,10 +21,11 @@
   <div id="root"></div>
   <script type="text/babel">
   function Children(props){
-
+  const personsChildrenInformation = props.personsChildrenInformation;
+ console.log(personsChildrenInformation);
   return (
     <div>
-    {childrenInformation}
+    
   </div>
   )
 }
@@ -40,7 +41,7 @@ function PersonList(props) {
     Salary: {person.salary}
     Gender: {person.gender}
     Email: {person.email}
-    <Children personsChildirenInformation={listPerson} />
+    <Children personsChildirenInformation={personInformation} />
     <br/>
      
     </person>
