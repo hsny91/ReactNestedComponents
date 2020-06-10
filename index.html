@@ -17,17 +17,12 @@
 
     class App extends React.Component {
 
-componentDidMount() {
- const listPerson=fetch('/dict.json')
-  .then(res => res.json())
-  .then(json =>{
-      <li>{json.id}</li>
-  })
-}
+
 
 render() {
   return (
-   <ul>{this.listPerson}</ul>
+   <ul>{this.componentDidMount()}</ul>
+   
  );
 }
 }
@@ -37,7 +32,7 @@ render() {
         <App/>,
         document.getElementById('root')
       );
-      <link rel="stylesheet" type="text/css" href="style.css"/> 
+      
     </script>
 </body>
 </html>
