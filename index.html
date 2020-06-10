@@ -20,19 +20,43 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-function Second (props) {
-  const personList=props.personList;
-  const personInformation=personList.map(person=>{
-    <li>{person.id}</li>
-  })
-    return (
-        <ul>
-           {personInformation}
-        </ul>
-    )
+  function Children(props){
+
+  return (
+    <div>
+    {childrenInformation}
+  </div>
+  )
 }
 
-  const personList=[{
+function PersonList(props) {
+  const personInformation = props.personInformation;
+  const listItems = personInformation.map((person) =>
+  <person key={person.first_name}>
+    <img  src={person.avatar}/>
+     First Name: {person.first_name}
+     Last Name: {person.last_name}
+     Adress: {person.adress}
+    Salary: {person.salary}
+    Gender: {person.gender}
+    Email: {person.email}
+    <Children personsChildirenInformation={listPerson} />
+    <br/>
+     
+    </person>
+  
+   );
+  return (
+    <div>
+    {listItems}
+   
+  
+    
+    </div>
+  );
+}
+
+const listPerson = [{
   "id": 1,
   "first_name": "Nesta",
   "last_name": "Farrance",
@@ -737,16 +761,12 @@ function Second (props) {
       "birthday": "2012-03-17"
     }
   ]
-}] 
-
-
+}]
 ReactDOM.render(
-  <Second  personList={personList}/>,
+  <PersonList personInformation={listPerson} />,
   document.getElementById('root')
 );
-        
-       
-     
+
       
     </script>
 </body>
