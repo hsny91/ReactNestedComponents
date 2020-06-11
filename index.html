@@ -18,46 +18,10 @@
 </head>
 
 <body>
+
   <div id="root"></div>
   <script type="text/babel">
-  function Children(props){
-  const personsChildrenInformation = props.personsChildrenInformation;
- console.log(personsChildrenInformation);
-  return (
-    <div>
-    
-  </div>
-  )
-}
-
-function PersonList(props) {
-  const personInformation = props.personInformation;
-  const listItems = personInformation.map((person) =>
-  <person key={person.first_name}>
-    <img  src={person.avatar}/>
-     First Name: {person.first_name}
-     Last Name: {person.last_name}
-     Adress: {person.adress}
-    Salary: {person.salary}
-    Gender: {person.gender}
-    Email: {person.email}
-    <Children personsChildirenInformation={personInformation} />
-    <br/>
-     
-    </person>
-  
-   );
-  return (
-    <div>
-    {listItems}
-   
-  
-    
-    </div>
-  );
-}
-
-const listPerson = [{
+  const listPerson = [{
   "id": 1,
   "first_name": "Nesta",
   "last_name": "Farrance",
@@ -763,6 +727,57 @@ const listPerson = [{
     }
   ]
 }]
+  function Children(props){
+  const personsChildrenInformation = props.personsChildrenInformation;
+  console.log(personsChildrenInformation);
+  const list = personsChildrenInformation.map((per) =>
+  <child key={per.firstName}>
+    <img  src={per.avatar}/>
+     First Name: {per.firstName}
+     Gender: {per.gender}
+     
+  
+   
+    <br/>
+     
+    </child>
+  )
+  return (
+    <div>
+    {list}
+  </div>
+  )
+}
+
+function PersonList(props) {
+  const personInformation = props.personInformation;
+  const listItems = personInformation.map((person) =>
+  <person key={person.first_name}>
+    <img  src={person.avatar}/>
+     First Name: {person.first_name}
+     Last Name: {person.last_name}
+     Adress: {person.adress}
+    Salary: {person.salary}
+    Gender: {person.gender}
+    Email: {person.email}
+    <Children personsChildrenInformation={listPerson} />
+   
+    <br/>
+     
+    </person>
+  
+   );
+  return (
+    <div>
+    {listItems}
+   
+    
+    
+    </div>
+  );
+}
+
+
 ReactDOM.render(
   <PersonList personInformation={listPerson} />,
   document.getElementById('root')
