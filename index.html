@@ -731,16 +731,20 @@
   const personsChildrenInformation = props.personsChildrenInformation;
   console.log(personsChildrenInformation);
   const list = personsChildrenInformation.map((per) =>
-  <child key={per.firstName}>
-    <img  src={per.avatar}/>
-     First Name: {per.firstName}
-     Gender: {per.gender}
+  per.children.map(child=>
+  <child key={child.firstName}>
+    <img  src={child.avatar}/>
+     First Name: {child.firstName}
+     Gender: {child.gender}
+     Birthday:{child.birthday}
      
   
    
     <br/>
      
     </child>
+  )
+  
   )
   return (
     <div>
