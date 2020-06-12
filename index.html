@@ -770,10 +770,11 @@ function PersonList(props) {
   const personInformation = props.personInformation;
   const listPerson = personInformation.map((person) =>
    <div className="person" key={person.first_name}>
+    <h1>Person</h1>
        <img  src={person.avatar}/>  
      First Name: {person.first_name}
      Last Name: {person.last_name}
-     Adress: {person.adress}
+     Adress: {person.address}
     Salary: {person.salary}
     Gender: {person.gender}
     Email: {person.email}
