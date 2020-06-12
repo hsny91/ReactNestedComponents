@@ -729,74 +729,62 @@
 }]
 
   function Children(props){
- 
-  const children=props.children
-  console.log(children)
-  const list = children.map((child) =>
-  
-
-    
+ const children=props.children
+  const listChildren = children.map((child) =>
   <child key={child.firstName}>
     <img  src={child.avatar}/>
      First Name: {child.firstName}
      Gender: {child.gender}
      Birthday:{child.birthday}
-     
-  
-   
-    <br/>
-     
-    </child>
-    
-  ) 
-
-
-
-   
-  
-  
-  
+     <br/>
+     </child>
+     ) 
   return (
     <div>
-    {list}
+    {listChildren}
+  </div>
+  )
+}
+  function Friends(props){
+ const friends=props.friends
+ const listFriends = friends.map((friend) =>
+ <friend key={friend.firstName}>
+   <img  src={friend.avatar}/>
+    First Name: {friend.firstName}
+    LastName:{friend.lastName}
+    Gender: {friend.gender}
+    Phone:{friend.phone}
+   <br/>
+    </friend>
+   ) 
+   return (
+    <div>
+    {listFriends}
   </div>
   )
 }
 
 function PersonList(props) {
   const personInformation = props.personInformation;
-  const listItems = personInformation.map((person) =>
-
-  <li key={person.first_name}>
-    
-    <img  src={person.avatar}/>
-    
+  const listPerson = personInformation.map((person) =>
+   <li key={person.first_name}>
+       <img  src={person.avatar}/>  
      First Name: {person.first_name}
      Last Name: {person.last_name}
-  
      Adress: {person.adress}
     Salary: {person.salary}
-    
     Gender: {person.gender}
     Email: {person.email}
     <Children children={person.children} />
-   
-    
-   
-    <br/>
-     
+    <Friends friends={person.friends} />     
     </li>
-  
    );
   return (
     <ul>
-    {listItems}
-   
-    
-    </ul>
+    {listPerson}
+   </ul>
   );
 }
-
 
 ReactDOM.render(
   <PersonList personInformation={listPerson} />,
