@@ -1,6 +1,6 @@
 
 body{
-    background-color: bisque;
+    background-color: rgb(232, 243, 238);
 }
 
 .content{
@@ -11,7 +11,7 @@ body{
 }
 .childeren{
     display: flex;
-    border: 2px solid rgb(246, 137, 137);
+    border: 1px beige;
 }
 .person{
     border: 5px solid black;

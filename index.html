@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React</title>
-  
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -25,10 +25,9 @@ function Children(props){
   const listChildren = children.map((child) =>
   <child key={child.firstName}>
     <div><img  src={child.avatar}/></div>
-     First Name: {child.firstName}
-     Gender: {child.gender}
-     Birthday:{child.birthday}
-     <br/>
+     First Name: {child.firstName}<br/>
+     Gender: {child.gender}<br/>
+     Birthday:{child.birthday}<br/>
      </child>
      ) 
   return (
@@ -38,48 +37,47 @@ function Children(props){
   </div>
   )
 }
-  function Friends(props){
- const friends=props.friends
- const listFriends = friends.map((friend) =>
- <friend className="friend"  key={friend.firstName}>
-  <div> <img  src={friend.avatar}/></div>
-   First Name: {friend.firstName}> 
-    LastName:{friend.lastName}
-    Gender: {friend.gender}
-    Phone:{friend.phone}
-   <br/>
-    </friend>
+function Friends(props){
+    const friends=props.friends
+    const listFriends = friends.map((friend) =>
+        <friend className="friend"  key={friend.firstName}>
+        <img  src={friend.avatar}/>
+         First Name: {friend.firstName}<br/>
+         LastName:{friend.lastName}<br/>
+         Gender: {friend.gender}<br/>
+         Phone:{friend.phone}<br/>
+        </friend>
    ) 
    return (
     <div className="friends" >
       <h1>Friends</h1>
-    {listFriends}
-  </div>
+        {listFriends}
+    </div>
   )
 }
-
 function PersonList(props) {
-  const personInformation = props.personInformation;
-  const listPerson = personInformation.map((person) =>
-   <div className="person" key={person.first_name}>
-    <h1>Person</h1>
-      <img  src={person.avatar}/> 
-     First Name: {person.first_name}
-     Last Name: {person.last_name}
-     Adress: {person.address}
-    Salary: {person.salary}
-    Gender: {person.gender}
-    Email: {person.email}
-    <Children children={person.children} />
-    <Friends friends={person.friends} />     
-    </div>
-   );
-  return (
-    <div className="content">
-    {listPerson}
-   </div>
-  );
+    const personInformation = props.personInformation;
+    const listPerson = personInformation.map((person) =>
+        <div className = "person" key = { person.first_name} >
+        <h1> Person </h1> 
+        <img src = {person.avatar}/>  
+        First Name:{person.first_name}<br/>
+        Last Name:{person.last_name}<br/>
+        Adress:{person.address}<br/>
+        Salary:{person.salary}<br/>
+        Gender:{person.gender}<br/>
+        Email:{person.email} <br/>
+        <Children children = {person.children}/><br/>
+        <Friends friends = {person.friends}/><br/>
+        </div>
+    );
+    return (
+       <div className = "content" > 
+          {listPerson}
+        </div>
+    );
 }
+
 
 ReactDOM.render(
   <PersonList personInformation={listPerson} />,
