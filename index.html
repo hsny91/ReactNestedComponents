@@ -730,9 +730,9 @@
 
   function Children(props){
  
-  const persons=props.persons
-  console.log(persons)
-  const list = persons.map((child) =>
+  const children=props.children
+  console.log(children)
+  const list = children.map((child) =>
   
 
     
@@ -747,7 +747,9 @@
     <br/>
      
     </child>
+    
   ) 
+
 
 
    
@@ -765,7 +767,7 @@ function PersonList(props) {
   const personInformation = props.personInformation;
   const listItems = personInformation.map((person) =>
 
-  <div key={person.first_name}>
+  <li key={person.first_name}>
     
     <img  src={person.avatar}/>
     
@@ -777,21 +779,21 @@ function PersonList(props) {
     
     Gender: {person.gender}
     Email: {person.email}
-    <Children persons={person.children} />
+    <Children children={person.children} />
    
     
    
     <br/>
      
-    </div>
+    </li>
   
    );
   return (
-    <div>
+    <ul>
     {listItems}
    
     
-    </div>
+    </ul>
   );
 }
 
