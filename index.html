@@ -729,15 +729,12 @@
 }]
 
   function Children(props){
-  const personsChildrenInformation = props.personsChildrenInformation;
-  const persons=props.persons
-  
  
-  const list = personsChildrenInformation.map((per) =>
+  const persons=props.persons
+  console.log(persons)
+  const list = persons.map((child) =>
   
-{
-  if(per.id==persons.id){
-  per.children.map(child=>
+
     
   <child key={child.firstName}>
     <img  src={child.avatar}/>
@@ -751,11 +748,12 @@
      
     </child>
   ) 
-}}
+
+
    
   
   
-  )
+  
   return (
     <div>
     {list}
@@ -767,21 +765,23 @@ function PersonList(props) {
   const personInformation = props.personInformation;
   const listItems = personInformation.map((person) =>
 
-  <person key={person.first_name}>
+  <div key={person.first_name}>
     <img  src={person.avatar}/>
      First Name: {person.first_name}
      Last Name: {person.last_name}
+   
      Adress: {person.adress}
     Salary: {person.salary}
+    
     Gender: {person.gender}
     Email: {person.email}
-    <Children personsChildrenInformation={listPerson} persons={person} />
+    <Children persons={person.children} />
    
     
    
     <br/>
      
-    </person>
+    </div>
   
    );
   return (
