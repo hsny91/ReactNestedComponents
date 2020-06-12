@@ -766,10 +766,12 @@ function PersonList(props) {
   const listItems = personInformation.map((person) =>
 
   <div key={person.first_name}>
+    
     <img  src={person.avatar}/>
+    
      First Name: {person.first_name}
      Last Name: {person.last_name}
-   
+  
      Adress: {person.adress}
     Salary: {person.salary}
     
