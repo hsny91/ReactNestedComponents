@@ -740,7 +740,8 @@
      </child>
      ) 
   return (
-    <div>
+    <div className="childeren" >
+      <h1>Childeren</h1>
     {listChildren}
   </div>
   )
@@ -748,7 +749,7 @@
   function Friends(props){
  const friends=props.friends
  const listFriends = friends.map((friend) =>
- <friend key={friend.firstName}>
+ <friend className="friend"  key={friend.firstName}>
    <img  src={friend.avatar}/>
     First Name: {friend.firstName}
     LastName:{friend.lastName}
@@ -758,7 +759,8 @@
     </friend>
    ) 
    return (
-    <div>
+    <div className="friends" >
+      <h1>Friends</h1>
     {listFriends}
   </div>
   )
@@ -767,7 +769,7 @@
 function PersonList(props) {
   const personInformation = props.personInformation;
   const listPerson = personInformation.map((person) =>
-   <li key={person.first_name}>
+   <div className="person" key={person.first_name}>
        <img  src={person.avatar}/>  
      First Name: {person.first_name}
      Last Name: {person.last_name}
@@ -777,12 +779,12 @@ function PersonList(props) {
     Email: {person.email}
     <Children children={person.children} />
     <Friends friends={person.friends} />     
-    </li>
+    </div>
    );
   return (
-    <ul>
+    <div className="content">
     {listPerson}
-   </ul>
+   </div>
   );
 }
 
