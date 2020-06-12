@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,17 +18,13 @@
 </head>
 
 <body>
-
-  <div id="root"></div>
-  <script type="text/babel">
-  
-  
-
-  function Children(props){
- const children=props.children
+<div id="root"></div>
+<script type="text/babel">
+function Children(props){
+  const children=props.children
   const listChildren = children.map((child) =>
   <child key={child.firstName}>
-    <img  src={child.avatar}/>
+    <div><img  src={child.avatar}/></div>
      First Name: {child.firstName}
      Gender: {child.gender}
      Birthday:{child.birthday}
@@ -47,8 +42,8 @@
  const friends=props.friends
  const listFriends = friends.map((friend) =>
  <friend className="friend"  key={friend.firstName}>
-   <img  src={friend.avatar}/>
-    First Name: {friend.firstName}
+  <div> <img  src={friend.avatar}/></div>
+   First Name: {friend.firstName}> 
     LastName:{friend.lastName}
     Gender: {friend.gender}
     Phone:{friend.phone}
@@ -68,7 +63,7 @@ function PersonList(props) {
   const listPerson = personInformation.map((person) =>
    <div className="person" key={person.first_name}>
     <h1>Person</h1>
-       <img  src={person.avatar}/>  
+      <img  src={person.avatar}/> 
      First Name: {person.first_name}
      Last Name: {person.last_name}
      Adress: {person.address}
