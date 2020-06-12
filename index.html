@@ -32,7 +32,7 @@ function Children(props){
      ) 
   return (
     <div className="childeren" >
-      <h1>Childeren</h1>
+      <h1>Childeren</h1><br/>
     {listChildren}
   </div>
   )
@@ -50,7 +50,7 @@ function Friends(props){
    ) 
    return (
     <div className="friends" >
-      <h1>Friends</h1>
+      <h1>Friends</h1><br/>
         {listFriends}
     </div>
   )
@@ -59,7 +59,7 @@ function PersonList(props) {
     const personInformation = props.personInformation;
     const listPerson = personInformation.map((person) =>
         <div className = "person" key = { person.first_name} >
-        <h1> Person </h1> 
+        <h1> Person </h1><br/>
         <img src = {person.avatar}/>  
         First Name:{person.first_name}<br/>
         Last Name:{person.last_name}<br/>
